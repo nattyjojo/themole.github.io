@@ -1,10 +1,11 @@
-let win = 0;
-    let loss = 0;
+
 export const moleAlgorithm = () =>{
+ 
     // get clicked element and verify if its a win
-    
+    let win = 0;
+    let loss = 0;
     const clicked = (btnclicked) => {
-        const computedStyle = window.getComputedStyle(btnclicked);
+        const computedStyle = window.getComputedStyle(btnclicked.target);
         const clickedBgColor = computedStyle.backgroundColor
         let winElement = document.querySelector(".win");
         let lossElement = document.querySelector(".loss")
@@ -15,32 +16,36 @@ export const moleAlgorithm = () =>{
             loss ++;
             lossElement.innerHTML= `${loss} LOSS`;
 
-        }
-    }
-    const moles = document.querySelectorAll(".mole")
+        };
+    };
+      
+    // add event listerner to all moles
+    const allMoles = document.querySelectorAll(".mole")
+    allMoles.forEach((mole, index) => {
+        mole.addEventListener("click", clicked);
+    });
+    const moles = [...document.querySelectorAll(".mole")]
     const game = () => {
-        const moleDisplay = Math.floor(Math.random() * moles.length);
-        for(let i = 0; i < moles.length; i++){
-            moles[i].addEventListener("click", function(event){
-                clicked(event.target)
+        let moleDisplay = Math.floor(Math.random() * moles.length);
+        let generatedDisplay = moles[moleDisplay];
+        Object.assign(generatedDisplay.style,{
+            backgroundColor: "rgb(0, 128, 0)",
+        })
+         setTimeout(() =>{
+            Object.assign(generatedDisplay.style,{
+                backgroundColor: "",
             })
-            Object.assign(moles[moleDisplay].style,{
-                backgroundColor: "rgb(0, 128, 0)",
-            })
-            setTimeout(() =>{
-                Object.assign(moles[moleDisplay].style,{
-                    backgroundColor: "",
-                })
-            }, 1500) 
-        }
+        }, 2000);
      
+    };
+    const startGame = () =>{
+        setInterval(game, 3000);
+      
     }
-    setInterval(game, 2000);
-
-
+    let startElement = document.querySelector(".start")
+    console.log(startElement)
+    startElement.addEventListener("click", startGame);
+    console.log(startElement)
+   
+    
 }
-moleAlgorithm()
-/*
-
- 
-*/
