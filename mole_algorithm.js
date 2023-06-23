@@ -1,6 +1,6 @@
 
 export const moleAlgorithm = () =>{
- 
+    let startElement = document.querySelector(".start")
     // get clicked element and verify if its a win
     let win = 0;
     let loss = 0;
@@ -38,14 +38,25 @@ export const moleAlgorithm = () =>{
         }, 2000);
      
     };
-    const startGame = () =>{
-        setInterval(game, 3000);
-      
-    }
-    let startElement = document.querySelector(".start")
-    console.log(startElement)
-    startElement.addEventListener("click", startGame);
-    console.log(startElement)
-   
+    let playGame;
+    const startgame = () => {
+        startElement.addEventListener("click", function () {
+        if (!playGame) {
+            playGame = setInterval(game, 3000);
+            startElement.textContent = "Pause";
+        } else {
+            clearInterval(playGame);
+            playGame = null;
+            startElement.textContent = "Start";
+        }
+        });
+    };
+
+    startgame()
+
     
 }
+
+
+
+//         const playGame = setInterval(game, 3000);

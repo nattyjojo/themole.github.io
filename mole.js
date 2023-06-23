@@ -3,7 +3,6 @@ export const moleExercise = () =>{
 
     const moleSection = () => {
         let mole = undefined;
-        
         const Whack_A_Mole_Container = document.createElement("main");
         Whack_A_Mole_Container.setAttribute("class", "Whack_A_Mole_Container");
         for(let i = 0; i < 12; i++){
@@ -72,6 +71,10 @@ export const moleExercise = () =>{
         Whack_A_Mole_wrapper.setAttribute("class", "Whack_A_Mole_wrapper");
         Whack_A_Mole_wrapper.append(Whack_A_Mole_Container,details)
         const display = document.querySelector(".displayIntervals")
+        Object.assign(display.style,{
+            margin: "0",
+            padding: "10px",
+        })
         display.appendChild(Whack_A_Mole_wrapper)
         
     }

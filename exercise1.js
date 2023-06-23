@@ -2,16 +2,24 @@ export const exercise1 = () =>{
 
     // creat elements to display result
     const displayProut = document.createElement("p")
+    Object.assign(displayProut.style,{
+        display: "inline-block"
+    })
     const displayTimeElasped = document.createElement("p")
+    Object.assign(displayTimeElasped.style,{
+        display: "inline-block"
+    })
     const displaycontainer = document.createElement("section")
     /*style displaycontainer */
     Object.assign(displaycontainer.style,{
-        width: "100vw",
+        width: "50vw",
         display: "grid",
         gridTemplateColumns: "repeat(2, 1fr)",
-        justifyContent: "space-around",
+        justifyContent: "space-between",
         padding: "20px",
-        fontSize: "40px",
+        fontSize: "20px",
+        textAlign: "center",
+        marginLeft: "33%",
     })
     displaycontainer.append(displayProut, displayTimeElasped)
 
