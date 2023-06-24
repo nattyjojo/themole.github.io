@@ -29,7 +29,6 @@ export const moleExercise = () =>{
         start.setAttribute("class", "start");
         start.textContent= "START";
         Object.assign(start.style,{
-            margin: "0% 18%",
             backgroundColor: "blue",
             color: "white",
             display: "inline-block",
@@ -39,6 +38,7 @@ export const moleExercise = () =>{
             borderRadius: "10px",
             cursor: "pointer",
             textAlign: "center",
+            alignItems: "last baseline",
         })
 
         const win = document.createElement("p")
@@ -57,12 +57,13 @@ export const moleExercise = () =>{
 
 
         const details = document.createElement("section")
+        details.setAttribute("class", "details")
         Object.assign(details.style,{
             padding: "20px",
             backgroundColor: "orange",
             marginTop: "10px",
-            border: "2px solid orange",
             borderRadius: "10px",
+            textAlign: "center",
         })
         details.append(loss, start, win)
 
@@ -87,7 +88,6 @@ export const moleExercise = () =>{
         Object.assign(Whack_A_Mole_wrapper.style,{
             borderRadius: "1px solid black",
             padding: "20px",
-            width: "90vw",
             display: "grid",
             justifyContent: "space-around",
 
@@ -98,9 +98,9 @@ export const moleExercise = () =>{
             Object.assign(mole.style,{
                 border: "2px solid white",
                 borderRadius: "100%",
-                width: "100px",
-                height: "100px",
-                margin: "10px",
+                width: "50px",
+                height: "50px",
+                margin: "5px",
                 cursor: "pointer",
             })
         })
@@ -115,7 +115,7 @@ export const moleExercise = () =>{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
             justifyContent: "space-between",
-            backgroundColor: "#f0e7e7"
+            backgroundColor: "#f0e7e7",
         })
     }
     Whack_A_Mole_ContainerStyle()

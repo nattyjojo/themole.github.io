@@ -11,7 +11,7 @@ export const moleAlgorithm = () =>{
         let lossElement = document.querySelector(".loss")
         if(clickedBgColor === "rgb(0, 128, 0)"){
             win ++;
-            winElement.innerHTML= `${win} WIN`;
+            winElement.innerHTML= `${win} <br> WIN`;
         }else{
             loss ++;
             lossElement.innerHTML= `${loss} LOSS`;
@@ -44,6 +44,7 @@ export const moleAlgorithm = () =>{
         if (!playGame) {
             playGame = setInterval(game, 3000);
             startElement.textContent = "Pause";
+            
         } else {
             clearInterval(playGame);
             playGame = null;

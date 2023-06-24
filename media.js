@@ -2,6 +2,7 @@
 export const responsive = () =>{
     const moles =  document.querySelectorAll(".mole")
     const mobile = window.matchMedia("(max-width: 500px)")
+    const details = document.querySelector(".details")
     const check = () =>{
         if(mobile.matches){
             document.body.style.backgroundColor="red";
@@ -22,10 +23,16 @@ export const responsive = () =>{
                 })
             
            })
+           Object.assign(details.style,{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            alignItems: "last baseline",
+
+           })
         }
 
     }
-   
+   check()
     mobile.addEventListener("change", check)
 }
 

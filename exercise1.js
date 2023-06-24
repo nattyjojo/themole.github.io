@@ -11,15 +11,11 @@ export const exercise1 = () =>{
     })
     const displaycontainer = document.createElement("section")
     /*style displaycontainer */
-    Object.assign(displaycontainer.style,{
-        width: "50vw",
-        display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
-        justifyContent: "space-between",
-        padding: "20px",
+    Object.assign(displaycontainer.style,{ 
+        padding: "10px",
         fontSize: "20px",
         textAlign: "center",
-        marginLeft: "33%",
+        display: "grid",
     })
     displaycontainer.append(displayProut, displayTimeElasped)
 
